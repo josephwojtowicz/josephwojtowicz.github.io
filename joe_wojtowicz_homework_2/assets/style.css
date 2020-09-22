@@ -1,0 +1,23 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.me {
+    float: left;
+    margin: 20px;
+}
+.container {
+    background-color: peru;
+    margin: 20px;
+    padding: 30px;
+}
+.card {
+    background-color: peru;
+}
+.about {
+    background-color: peru;    
+}
+
+.body {
+    background-color: goldenrod;
+}
