@@ -28,7 +28,7 @@ generateBtn.addEventListener("click", function () {
 function generatePassword() {
   characterNumbers = parseInt(prompt("How many characters would you like your password to be?"));
   if (!characterNumbers) {
-    alert("Please enver a number");
+    alert("Please enter a number");
   }
   else if (characterNumbers < 8 || characterNumbers > 128) {
   characterNumbers = parseInt(prompt("Please enter a number from 8 - 128"));
