@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    
+</head>
+<body>
+
+    <div id="controls">
+        <div id="info">
+            <a href="high-scores.html">
+          <button id="scores" class="btn btn-outline-primary">View High Scores</button></a>
+          <div id="timer"><p>Time: <span id="time">0</span></p></div>
+        </div>
+      </div> 
+
+    <div id="nowTime"></div>
+        <div id="quizWrapper">
+        <br>
+        <section id="begin">
+            <h1>Code Quiz</h1>
+            <br>
+            <br>
+                <h3>    
+                    Answer the following coding questions within the time limit! Note that incorrect
+                    answers will penalize your time limit by 10 seconds. Good luck!
+                </h3>
+            <button id="startButton" class="btn btn-outline-primary">Start Quiz!</button>
+        </section>
+
+    <div id="quizPlace">
+        <div id="question"></div>
+            <div>
+                <div id="questionChoices">
+                </div>
+                <div id="questionValidity">
+                </div>
+                <div>
+                 <div></div>
+                 </div>   
+                </div>
+    </div>
+    <div id="allGone" class="hide">
+        <h1>You finished!! Congratulations!</h1>
+        </div>
+        <div id="scoreman" class="hide">
+            Your score is:
+            <p id="finalScore"></p>
+        </div>
+        
+    </div>
+
+    <div id="realEnd" class="hide">
+        <div>
+            <p>Enter Initials:</p>
+            <input type="text" id="initialsBox" />
+            <a href="high-scores.html">
+                <button class="btn btn-outline-primary" id="initialsButton">
+                    Submit
+                </button>
+            </a>
+        </div>
+    </div>
+</div> 
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

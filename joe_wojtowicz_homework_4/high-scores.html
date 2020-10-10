@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Scores</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="highScores">
+        <h1>High Scores</h1>
+        <div id="finalScoreListContainer"></div>
+        <div>
+        </div>
+        <a href="index.html">
+        <button id="reset" class="btn btn-outline-primary">Go back</button></a> <button id="clearScores" class="btn btn-outline-primary">Clear High Scores</button>
+    </section>
+
+    <script type="text/javascript" src="questions.js"></script>
+    <script>
+        //render the user high score
+        function renderHighScores() {
+            var highScoreContainer = document.getElementById(
+                "finalScoreListContainer"
+            );
+
+            var storedScores = localStorage.getItem("highScoreList");
+            if (storedScores == null) {
+                document.getElementById("scoreList").remove();
+                return;
+            }
+
+            storedScores = JSON.parse(storedScores);
+
+            //create the ordered list to store initials
+            var containerList = document.createElement("ol");
+            containerList.setAttribute("id", "scoreList");
+            for (var i = 0; i < storedScores.length; i++) {
+                var highScore = document.createElement("li");
+                highScore.setAttribute(
+                    "class",
+                    "list-group-item list-group-flush"
+                );
+                highScore.innerHTML = 
+                    storedScores[i].initials + " " + storedScores[i].score;
+                    console.log("initials")
+                
+                containerList.appendChild(highScore);
+                    
+            }
+            highScoreContainer.appendChild(containerList);
+        }
+        renderHighScores();
+
+        //clear local storage
+        var clearButton = document.querySelector("#clearScores");
+        clearButton.addEventListener("click", function(){
+            localStorage.removeItem("highScoreList");
+
+            renderHighScores();
+        });
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+#scores {
+    text-align: center;
+    display: block;
+    margin-right: auto;
+}
+
+#highScores {
+    text-align: center;
+}
+
+#timer {
+    right: 500px;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-size: small;
+}
+
+#startButton {
+   padding: 15px 32px; 
+   text-align: center;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+}
+
+#quizPlace {
+    text-align: center;
+}
+
+#allGone {
+    text-align: center;
+}
+
+#scoreman {
+    text-align: center;
+}
+
+#finalScore {
+    text-align: center;
+}
+
+#realEnd {
+    text-align: center;
+}
+
+#nowTime {
+    float: right;
+}
+
+.hide {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+  
